@@ -3,34 +3,36 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|nickname|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
-|password｜integer|null: false, foreign_key: true|
+|nickname|string|null: false, unique: true, index: true　|
+|email|integer|null: false, unique: true, index: true　|
+|groups|integer|foreign_key: true|
 
-- belongs_to :password
+
 - belongs_to :nickname
 - belongs_to :email
+- has_many: groups_id, through::  groups_users
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|text|integer|null: false, foreign_key: true|
-|image｜integer|null: false, foreign_key: true|
+|text|text|null: false, |
 |user_id｜integer|null: false, foreign_key: true|
+|group_id|integer|null: false,foreign_key: true｜
+|time|datetime|
 
-- belongs_to :id
 - belongs_to :text
-- belongs_to:image
 - belongs_to:user_id
+- belongs_to:group_id
+- has_many: users,through::  groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
+|group_name|string|null: false, foreign_key: true|
 
-- belongs_to :user_id
+- has_many: user_id
+- has_many: group_name
 
 ## groups_usersテーブル
 |Column|Type|Options|
