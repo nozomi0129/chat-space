@@ -24,6 +24,14 @@
 - belongs_to :text
 - belongs_to:image
 - belongs_to:user_id
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+
+- belongs_to :user_id
+
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
