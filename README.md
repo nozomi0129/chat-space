@@ -5,12 +5,10 @@
 |------|----|-------|
 |nickname|string|null: false, unique: true, index: true　|
 |email|integer|null: false, unique: true, index: true　|
-|groups|integer|foreign_key: true|
-
 
 - belongs_to :nickname
 - belongs_to :email
-- has_many: groups_id, through::  groups_users
+- has_many: groups, through:: groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -18,28 +16,24 @@
 |text|text|null: false, |
 |user_id｜integer|null: false, foreign_key: true|
 |group_id|integer|null: false,foreign_key: true｜
-|time|datetime|
 
 - belongs_to :text
 - belongs_to:user_id
 - belongs_to:group_id
-- has_many: users,through::  groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_name|string|null: false, foreign_key: true|
+|group_name|string|null: false, |
 
-- has_many: user_id
 - has_many: group_name
-
+- has_many: users, through:: groups_users
+- has_many: messages
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - belongs_to :group
