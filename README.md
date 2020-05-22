@@ -12,10 +12,10 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, |
+|text|text|
 |user_id｜integer|null: false, foreign_key: true|
 |group_id|integer|null: false,foreign_key: true｜
-|image|string｜｜
+|image|string｜
 
 - belongs_to:user_id
 - belongs_to:group_id
