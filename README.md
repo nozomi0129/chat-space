@@ -4,10 +4,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true, index: true　|
-|email|integer|null: false, unique: true, index: true　|
+|email|string|null: false, unique: true, index: true　|
 
-- belongs_to :nickname
-- belongs_to :email
+- has_many: messages
 - has_many: groups, through:: groups_users
 
 ## messagesテーブル
@@ -16,8 +15,8 @@
 |text|text|null: false, |
 |user_id｜integer|null: false, foreign_key: true|
 |group_id|integer|null: false,foreign_key: true｜
+|image|string｜｜
 
-- belongs_to :text
 - belongs_to:user_id
 - belongs_to:group_id
 
@@ -26,14 +25,13 @@
 |------|----|-------|
 |group_name|string|null: false, |
 
-- has_many: group_name
 - has_many: users, through:: groups_users
 - has_many: messages
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|references :user|integer|foreign_key: true|
+|references :group|integer|foreign_key: true|　
 
 ### Association
 - belongs_to :group
