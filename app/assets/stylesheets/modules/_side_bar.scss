@@ -30,19 +30,19 @@
   }
 }
 
-  .top-items{
-    height: 20px;
-    width: 260px;
-    background-color: #253141;
-    @include centering(space-between);
-    &__icoms {
-      width: 60px;
-      @include centering(flex-end);
-      .icoms_a{color: #ffffff;}
-      .icoms_b{color:#ffffff;}
-      letter-spacing:5px;
+    .top-items{
+      height: 20px;
+      width: 260px;
+      background-color: #253141;
+      @include centering(space-between);
+      &__icoms {
+        width: 60px;
+        @include centering(flex-end);
+        .icoms_a{color: #ffffff;}
+        .icoms_b{color:#ffffff;}
+        letter-spacing:5px;
+      }
     }
-  }
 
     .group-preview{
       height: 65px;
@@ -52,7 +52,8 @@
       &__name{
         font-size: 15px;
         color: #ffffff;
-        padding-top: 5px;}
+        padding-top: 5px;
+      }
       &__text{
         font-size: 11px;
         color: #ffffff;
