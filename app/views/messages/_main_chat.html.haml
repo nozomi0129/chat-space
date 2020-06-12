@@ -17,21 +17,13 @@
           2020年5月28日　8時12分
       .a-items__user-text
         お肉！楽しみ！！
-    .c-items
-      .c-items__user-name
-        test
-        .c-items__user-name__time
-          2020年6月12日　9時12分
-      .c-items__user-text
-        やった！！
-
   .chat-main__massage-form
     .d-items-items__massage
       .d-items-items__massage__form
-        type a messge
+        %input{type: "text" ,class: "d-items-items__massage__form__input"}
       .d-items-items__massage__icon
-        = link_to '#', class:"icom_d" do
+        %label{class:"icom_d"}
           = icon('far','image')
-    .d-items__send__botn
-      =link_to "#", class: "send__botn" do
-        Send
+    %input{type: "submit", value: "Send", class: "d-items__send__botn"}
+
+      -# = f.text_field :content, class: 'chat-main__massage-form', placeholder: 'type a message'

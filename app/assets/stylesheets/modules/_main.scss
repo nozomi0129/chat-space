@@ -1,64 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-@mixin centering($justify:center) {
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-}
-
-.wrapper {
-  display: flex;
-}
-
-.side-bar {
-  background-color: #253141;
-  height: 100vh;
-  width: 300px;
-  &__user-name {
-    background-color: #253141;
-    height: 100px;
-    font-size: 16px;
-    font-weight:bold;
-    color: #ffff;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-  }
-  &__group-list{
-    background-color: #2f3e51;
-    height: calc(100vh - 100px);}
-  }
-
-  .top-items{
-    height: 20px;
-    width: 260px;
-    background-color: #253141;
-    @include centering(space-between);
-    &__icoms {
-      width: 60px;
-      @include centering(flex-end);
-      .icoms_a{color: #ffffff;}
-      .icoms_b{color:#ffffff;}}
-  }
-
-    .group-preview{
-      height: 65px;
-      width: 300px;
-      padding-top: 20px;
-      padding-left: 20px;
-      &__name{
-        font-size: 15px;
-        color: #ffffff;
-        padding-top: 5px;}
-      &__text{
-        font-size: 11px;
-        color: #ffffff;}
-    }
-
-  .chat-main{
+.chat-main{
     background-color: #ffff;
     height: 100vh;
     width: calc(100vw - 300px);
@@ -73,7 +13,6 @@
       height: 90px;
       @include centering(space-between)
       }
-    }
   
   .b-items{
     height: 100px;
@@ -98,7 +37,8 @@
       width: 72px;
       margin-top: 28px;
       border: 1px solid #38aef0;
-      .group-edit-a{color: #38aef0;}
+      .group-edit-a{color: #38aef0;
+        text-decoration: none;}
         text-align: center;
         line-height: 40px;
         font-size: 16px;}
@@ -127,31 +67,6 @@
       color: #434a43;
       padding-top: 70px;} 
     }
-
-    .c-items{
-      padding-left: 40px;
-      position: relative;
-      &__user-name{
-        height: 20px;
-        padding-top: 35px;
-        font-size: 16px;
-        color: #333333;
-        font-weight: bold;
-        margin-bottom: 12px;
-        display: flex;
-        position: absolute;
-        &__time{
-          font-size: 12px;
-          color: #999999;
-          padding-left: 5px;
-          font-weight:lighter;}}
-      &__user-text{
-        padding-top: 15px;
-        font-size: 14px;
-        color: #434a43;
-        padding-top: 70px;}
-      }
-
       .d-items-items__massage{
       background-color:#ffff;
       height: 50px;
@@ -169,6 +84,10 @@
         line-height: 50px;
         color:#999999;
         font-size: 17px;
+        &__input{
+          width: 100%;
+          border: none;
+        }
         }
       &__icon{
         color: black;
@@ -186,4 +105,8 @@
       text-align: center;
       line-height: 50px;
       margin-right: 40px;
+      border: none;
+      color:#ffff;
     }
+  }
+  
