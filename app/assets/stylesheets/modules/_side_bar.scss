@@ -2,15 +2,12 @@
   box-sizing: border-box;
 }
 
-@mixin centering($justify:center) {
+@mixin centering($justify:center){
   display: flex;
   justify-content: $justify;
   align-items: center;
 }
 
-.wrapper {
-  display: flex;
-}
 
 .side-bar {
   background-color: #253141;
@@ -43,7 +40,8 @@
       @include centering(flex-end);
       .icoms_a{color: #ffffff;}
       .icoms_b{color:#ffffff;}
-      letter-spacing:5px;}
+      letter-spacing:5px;
+    }
   }
 
     .group-preview{
@@ -57,7 +55,8 @@
         padding-top: 5px;}
       &__text{
         font-size: 11px;
-        color: #ffffff;}
+        color: #ffffff;
+      }
     }
 
   
