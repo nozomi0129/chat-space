@@ -4,17 +4,18 @@
       .top-items__name
         =current_user.name
       .top-items__icoms 
-        = link_to '#', class:"icoms_a" do
+        = link_to new_group_path(current_user) do
           = icon('far','edit')
         = link_to edit_user_path(current_user) do
           = icon('fas','cog')
   .side-bar__group-list
-    .group-preview
-      = link_to '#' do
-        .group-preview__name
-          グループ名
-        .group-preview__text
-          最新のメッセージ
+    - current_user.groups.each do |group|
+      .group-preview
+        = link_to group_messages_path(group) do
+          .group-preview__name
+            = group.name
+          .group-preview__text
+            最新のメッセージ
 
 
 -# .SideBar
@@ -24,15 +25,16 @@
 -#         = current_user.name
 -#       %ul.LeftHeader__iconList
 -#         %li.LeftHeader__Icon
--#           = link_to '#' do
+-#           = link_to new_group_path do
 -#             = icon('fas', 'edit')
 -#         %li.LeftHeader__Icon
 -#           = link_to edit_user_path(current_user) do
 -#             = icon('fas', 'cog')
 -#   .GroupList
--#     .Group
--#       = link_to __text
--#         .Group__name
--#           グループ名
--#         .Group__message
--#           最新のメッセージ
+-#     - current_user.groups.each do |group|
+-#       .Group
+-#         = link_to '#' do
+-#           .Group__name
+-#             = group.name
+-#           .Group__message
+-#             メッセージはまだありません
