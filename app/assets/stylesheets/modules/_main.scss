@@ -6,11 +6,11 @@
       background-color:#ffffff;
     height: 100px;
     }
-    &__massage-list {
+    &__message-list {
       background-color: #fafafa;
       height: calc(100vh - 190px);
     }
-    &__massage-form {
+    &__message-form {
       background-color:#d2d2d2;
       height: 90px;
       @include centering(space-between)
@@ -75,42 +75,49 @@
         font-size: 14px;
         color: #434a43;
         padding-top: 70px;
+        &__content{
+          background-color: #ffff;
+        }
       } 
     }
-      .d-items-items__massage{
-        background-color:#ffff;
+      .d-items-items__message{
+        // background-color:#ffff;
         height: 50px;
         width: 100%;
         margin:0 15px 0 40px ;
         @include centering(space-between);
-        position: relative;
         padding-left: 15px;
-        &__form {
-          background-color: #ffffff;
+        &__contents{
           width: 100%;
-          height: 50px;
-          border: none;
-          padding-left: 10px;
-          line-height: 50px;
-          color:#999999;
-          font-size: 17px;
+          height: 45px;
+          background-color:#ffffff;
+          position: relative;
           &__input{
             width: 100%;
+            height: 100%;
             border: none;
-          }
+            padding-left: 15px;
+          } 
+      }
+      &__icon{
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
         }
-        &__icon{
-          color: black;
-          font-size: 25px;
-          position: absolute;
-          bottom: 5px;
-          right: 10px;
-        }
+      }
+      .Hidden{
+        display: none;
+      }
+      .Form{
+        display: flex;
+        width: 100%;
       }
     .d-items__send__botn{
       text-decoration: none;
       .send__botn{color:#ffff;}
-      height: 50px;
+      height: 45px;
       width: 120px;
       background-color: #38aef0;
       text-align: center;
@@ -120,4 +127,3 @@
       color:#ffff;
     }
 }
-  
