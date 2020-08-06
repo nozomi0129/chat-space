@@ -57,6 +57,7 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.chat-main__message-list').append(html);
+      $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
