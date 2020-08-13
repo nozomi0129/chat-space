@@ -52,7 +52,7 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    
+
     .done(function(data){
       let html = buildHTML(data);
       $('.chat-main__message-list').append(html);
