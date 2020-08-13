@@ -4,14 +4,14 @@
       .top-items__name
         =current_user.name
       .top-items__icoms 
-        = link_to new_group_path(current_user) do
+        = link_to new_group_path(current_user) , class: "top-items__icoms__new" do
           = icon('far','edit')
-        = link_to edit_user_path(current_user) do
+        = link_to edit_user_path(current_user),class: "top-items__icoms__settings" do
           = icon('fas','cog')
   .side-bar__group-list
     - current_user.groups.each do |group|
       .group-preview
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group), class: "group-preview__box" do
           .group-preview__name
             = group.name
           .group-preview__text

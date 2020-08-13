@@ -9,6 +9,9 @@
 }
 
 
+
+
+
 .side-bar {
   background-color: #253141;
   height: 100vh;
@@ -35,14 +38,22 @@
       width: 260px;
       background-color: #253141;
       @include centering(space-between);
+      letter-spacing:5px;
       &__icoms {
         width: 60px;
         @include centering(flex-end);
         .icoms_a{color: #ffffff;}
         .icoms_b{color:#ffffff;}
-        letter-spacing:5px;
+        }
+      &__icoms__new{
+        color: #ffffff;
+      }
+      &__icoms__settings{
+        color:#ffffff;
       }
     }
+    
+    
 
     .group-preview{
       height: 65px;
@@ -58,6 +69,11 @@
         font-size: 11px;
         color: #ffffff;
       }
+      &__box{
+        text-decoration: none;
+      }
     }
-
+    
+    
+  
   
