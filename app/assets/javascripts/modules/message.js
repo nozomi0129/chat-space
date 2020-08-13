@@ -52,8 +52,6 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    
-  
     .done(function(data){
       let html = buildHTML(data);
       $('.chat-main__message-list').append(html);
@@ -64,7 +62,11 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました");
       $('.Form__submit').prop("disabled", false);
-    });
+    })
+    .always(function() {
+      $('.d-items__send__botn').prop('disabled', false);
+      $('form')[0].reset();
+    })
   });
 });
 
