@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="a-items">
+        `<div class="a-items" data-message-id=${message.id}>
           <div class="a-items__box">
             <div class="a-items__user-name">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="a-items">
+      `<div class="a-items" data-message-id=${message.id}>
         <div class="a-items__box">
           <div class="a-items__user-name">
             ${message.user_name}
@@ -52,21 +52,21 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    
-  
     .done(function(data){
       let html = buildHTML(data);
       $('.chat-main__message-list').append(html);
+      $('form')[0].reset();
       $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+      $('.Form__submit').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Form__submit').prop("disabled", false);
     })
     .always(function() {
       $('.d-items__send__botn').prop('disabled', false);
       $('form')[0].reset();
     })
-
   });
 });
 
